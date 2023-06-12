@@ -6,37 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function Car(name, speed) {
-            this.name = name || "BMW";
-            this.speed = speed || 200;
-            this.accelarate = function(){
-                console.log("accelarating");
-            }
-        }
-        // prototype atrribute is only accessible by a Constructor not by the object.
-        // In ES5 this is how you set the attributes of the base class by using the accessible keyword "prototype"
-        function JamesBondCar (name, speed, isArmed) {
-            this.isArmed = false;
-            JamesBondCar.prototype.name = name;
-            JamesBondCar.prototype.spped = speed;
-        }
-        JamesBondCar.prototype = new Car();
-        var jbc = new JamesBondCar("AstonMartin", 200);
-        console.log(jbc.name);
-        console.log(jbc.spped);
+        // Immediately invokable function expression!
+        // Implements module revealing patterns.
+        // Prior to ES6
+        // Libraries would generally would use IIFE to implement
+        // New frameworks would use iife to implement features.
+        // Babel can transpile new code into old code
+        (function (msg) {
+            console.log(msg);
+        })("IIFE executed");
 
-        Date.prototype.getDayName = function() {
-            switch (this.getDay()){
-                case 1:
-                    return "Monday";
-                case 2:
-                    return "Tuesday"
-                deafult:
-                    break;
+        var res = (function (x,y) {
+            return x+y;
+        })(20, 30);
+
+        var mathModule = (function () {
+            function Add(x, y){
+                return x+y;
             }
-        };
-        var date = new Date();
-        console.log(date.getDayName());
+            function Multiply(x,y) {
+                return x*y;
+            }
+            return {Addition: Add }; // For exporting. // Addition is alias for add
+            //Multiply isn't exported. It's a private function.
+        })();
+
     </script>
     <script src="script.js"></script>
 </head>
