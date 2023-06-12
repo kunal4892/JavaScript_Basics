@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Start"); // prints 1st
+
+        // When the stack is empty is empty the callback function executes
+        // call stack, callback function, event queue
+        // more on event loop here:
+        // https://www.youtube.com/watch?v=8aGhZQkoFbQ
+        setTimeout(function () {
+            console.log("This is executed after 2 seconds"); // prints 3rd
+        }, 2000);
+        console.log("End"); // prints 2nd
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
