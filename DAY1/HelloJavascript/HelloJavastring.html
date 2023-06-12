@@ -59,7 +59,26 @@
     //   person.getDetails();
     var JSONData = JSON.stringify(person); //Converts Js object to JSON
     var JSONObj = JSON.parse(JSONData) //Converts JSON to Js Object.
- 
+        </script>
+
+        <script>
+            // Object Constructor
+            var obj = new Object();
+            obj.name = "XYZ";
+            obj.age = 35;
+            obj.getDetails = function () {
+                console.log(this.name);
+            };
+            // Custom Constructor - function
+            function Car(){
+                this.name = "BMW";
+                this.speed = 200;
+            }
+            // Create a new object carObj
+            var carObj = new Car();
+            console.log(carObj.name);
+            // Attached with Window object
+            Car();
         </script>
     <script src="script.js"></script>
 </head>
