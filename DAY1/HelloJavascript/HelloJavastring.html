@@ -54,9 +54,11 @@
           );
         },
       };
-      var player = person;
-      player.country = "SRB";
-      person.getDetails();
+    //   var player = person;
+    //   player.country = "SRB";
+    //   person.getDetails();
+    var JSONData = JSON.stringify(person); //Converts Js object to JSON
+    var JSONObj = JSON.parse(JSONData) //Converts JSON to Js Object.
  
         </script>
     <script src="script.js"></script>
