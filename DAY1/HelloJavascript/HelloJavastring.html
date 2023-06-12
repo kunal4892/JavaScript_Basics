@@ -6,28 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        // Stack o ----> Heap prototype (new Object(base Object class for all objects))
-        // This type of inheritance is called prototypical inheritance.
-        var o = {};
-        var person = {name: "Djokovic", country: "Serbia"};
-        // Prototype is a base object for all objects
-        //  Stack                           heap
-        //  --------           --------------  ------------
-        // | person | ----->  | name/country  | new Object |
-        //  --------           ----- --------  ------------
-        //  --------           --------------  ------------
-        // | player | ----->  |              | new person() |
-        //  --------           ----- --------  ------------
-        //     |
-        //     |
-        //  ---------
-        // | player1 | 
-        //  ---------
-        var player = Object.create(person); // Player has prototype
-        var player1 = person // Player1 reference just on stack.
-        console.log(player.hasOwnProperty("name")); // false
-        console.log(person.hasOwnProperty("name")); // true
+        function Car(name, speed) {
+            this.name = name || "BMW";
+            this.speed = speed || 200;
+            this.accelarate = function(){
+                console.log("accelarating");
+            }
+        }
+        // prototype atrribute is only accessible by a Constructor not by the object.
+        // In ES5 this is how you set the attributes of the base class by using the accessible keyword "prototype"
+        function JamesBondCar (name, speed, isArmed) {
+            this.isArmed = false;
+            JamesBondCar.prototype.name = name;
+            JamesBondCar.prototype.spped = speed;
+        }
+        JamesBondCar.prototype = new Car();
+        var jbc = new JamesBondCar("AstonMartin", 200);
+        console.log(jbc.name);
+        console.log(jbc.spped);
 
+        Date.prototype.getDayName = function() {
+            switch (this.getDay()){
+                case 1:
+                    return "Monday";
+                case 2:
+                    return "Tuesday"
+                deafult:
+                    break;
+            }
+        };
+        var date = new Date();
+        console.log(date.getDayName());
     </script>
     <script src="script.js"></script>
 </head>
