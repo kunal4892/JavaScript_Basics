@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        if(true){
+            // Block restricted
+            let x = 200;
+            console.log(x);
+            const PI = 3.14;
+            console.log(PI);
+        }
+        // Block restricted
+        // Cannot do let x = 10, var x = 10 in this block scope
+        // let won't let you use a var before it's declared
+        // Prevents Hoisting.
+        let x = 200;
+        console.log(x);
+        const PI = 3.14;
+        console.log(PI);
+
+        // Reference to the obj is constant.
+        const player = {name: "Nadal"};
+        // Allowed to update the property.
+        // allowed to add a property.
+        player.name = "Rafael Nadal";
+        player.country = "Spain";
+        console.log(player)
+        {
+            // Block scoped
+            let x = 300;
+            console.log(x);
+            const PI = 31.4
+            console.log(PI);
+        }
+
+        // Spread operator
+        let cars = ["BMW","AUDI"]
+        let moreCars = ["TATA","HYUNDAI"]
+        let allcars = [...cars, ...moreCars, "MERC"]
+        console.log(allcars);
+        
+        // With ES6 no need to use the protype attribute instead
+        // use spread
+        // it matters where you spread the object.
+        // Player1 nationality is British
+        // Player2 nationality is Scottish
+        let person = {name: "Andy Murray", nationality: "Scottish"};
+        let player1 = {...person, age: 36, nationality: "British"};
+        let player2 = {age: 36, nationality: "British", ...person, };
+        console.log(player1);
+        console.log(player2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
