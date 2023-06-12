@@ -42,8 +42,8 @@
         // rect instance
 
         // Way 1
-        var rect = new Rect(); // length and Breadth is still not atrtributes of Rect
-
+        var rect = new Rect(); // length and Breadth are still not atrtributes of Rect
+        rect.prototype = Object.create(new Shape());
         // Way 2
         var rect1 = new Rect1(); // Binds everything within Shape
         rect.prototype.Rect = new Shape();
