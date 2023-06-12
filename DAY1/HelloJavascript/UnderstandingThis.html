@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Start")
+        function Emp(){
+            this.salary = 200000;
+            // this CALLBACK set aside on the event queue
+            // the context is not stored ie on which
+            // instance should the callback be called
+            // We lost the original context or original object
+            // Segue to clojure variables
+
+            setTimeout(function() {
+                console.log(this.salary); // this is window obj
+            },2000);
+        }
+        var emp = new Emp();
+        console.log("End")
+
+        console.log("Start another")
+        function Emp1(){
+            this.salary = 200000;
+            // Segue to clojure variables
+            // Solution - use Clojure vars
+            var _this = this;
+            setTimeout(function() {
+                console.log(_this.salary);
+            },2000);
+        }
+        var emp = new Emp1();
+        console.log("End another")
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Clojure var - Nested funcs
+        // Js retains the value of x coz it might be used later
+        // 1. 
+        // function Test () {
+        //     var x = 100;
+        //     // console.log(x);
+        //     return function(){
+        //         return x;
+        //     }
+        // }
+        // var NestedFunc = Test(); // invoke the returned function.
+        // NestedFunc();
+        
+        // 2.
+        function Test1 () {
+            var x = 100;
+            return function(){
+                console.log(x)
+            }
+        }
+        var NestedFunc1 = Test1(); // invoke the returned function.
+        NestedFunc1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
