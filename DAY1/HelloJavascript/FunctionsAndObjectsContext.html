@@ -6,26 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var person = {
-            name: "John",
-            greet: function(msg) {
-                console.log(msg + " " + this.name);
-            },
-        };
-        person.greet("Hello");
+        // var person = {
+        //     name: "John",
+        //     greet: function(msg) {
+        //         console.log(msg + " " + this.name);
+        //     },
+        // };
+        // person.greet("Hello");
 
-        var anotherPerson = {name: "Tim"};
-        // call - apply - bind
-        person.greet.call(anotherPerson, "Hi"); //(this, "Hi")
-        // apply
-        person.greet.apply(anotherPerson, ["BYE"]); //pass the parameters in an array
-        var greetBindedWithAnotherPerson = person.greet.bind(
-            anotherPerson,
-            "Hola",
-        );
-        // 100 lines of code
-        greetBindedWithAnotherPerson();
+        // var anotherPerson = {name: "Tim"};
+        // // call - apply - bind
+        // person.greet.call(anotherPerson, "Hi"); //(this, "Hi")
+        // // apply
+        // person.greet.apply(anotherPerson, ["BYE"]); //pass the parameters in an array
+        // var greetBindedWithAnotherPerson = person.greet.bind(
+        //     anotherPerson,
+        //     "Hola",
+        // );
+        // // 100 lines of code
+        // greetBindedWithAnotherPerson();
 
+        function Shape() {
+            this.length = 10;
+            this.breadth = 10;
+        }
+
+        function Rect() {
+            this.isSquare = false;
+        }
+
+        function Rect1() {
+            Shape.call(this);
+            this.isSquare = false;
+        }
+        // rect instance
+
+        // Way 1
+        var rect = new Rect(); // length and Breadth is still not atrtributes of Rect
+
+        // Way 2
+        var rect1 = new Rect1(); // Binds everything within Shape
+        rect.prototype.Rect = new Shape();
     </script>
 </head>
 <body>
