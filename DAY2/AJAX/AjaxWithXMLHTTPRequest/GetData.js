@@ -1,3 +1,4 @@
+
 function GetData(callback) {
     console.log("Ajax logic here");
     // 1. Instantiate XMLHttpRequest.
@@ -12,7 +13,9 @@ function GetData(callback) {
     xMLHttpRequest.onreadystatechange = function() {
         if(xMLHttpRequest.readyState == 4 && xMLHttpRequest.status ==200) {
             // console.log(xMLHttpRequest.responseText);
-            callback(xMLHttpRequest.responseText);
+            callback(null, xMLHttpRequest.responseText);
+        } else if(xMLHttpRequest.readyState ==4 && xMLHttpRequest.status !=200){
+            callback("something went wrong", xMLHttpRequest.statusText, null)
         }
     };
     xMLHttpRequest.send(); // places the async request - same as setTimeout

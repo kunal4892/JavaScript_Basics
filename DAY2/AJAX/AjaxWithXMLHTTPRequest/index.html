@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="GetData.js"></script>    
+    <script>
+        // click and async request don't freeeze up the browser
+        // The browser takes care of running the async request and
+        // listening on the button click on separte threads.
+        function Eventhandler() {
+            console.log("U clicked");
+        }
+        //let postJson = GetData(); // We won't get the response here
+        // cant do sync calls to a func doing async operations.
+        GetData(function(err, postJson){
+            if(err) console.log("Error : "+ err);
+            console.log(postJson);
+        });
+        console.log("Program Ended");
+    </script>
+</head>
+<body>
+    <button onclick="Eventhandler()">Button</button>
+</body>
+</html>
