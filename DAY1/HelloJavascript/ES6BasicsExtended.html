@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Destructuring - Arrays
+        let cars = ["Nisan", "BMW", "Mustang"];
+        // let [firstCar, ,thirdCar] = cars;
+        // Can also initialize the elements past the last element
+        // as it will be undefined.
+        let [firstCar, , ,lastCar="Merc"] =cars;
+        
+        // Destructuring - Objects
+        let person = { fname: "Andy",
+                       lname: "Murray",
+                       nationality: "British",
+                       stats: {
+                            rank: 44,
+                            grandslamswon:3,
+                       },};
+
+        // Should match the exact property name - fname, lname
+        let {fname, lname} = person;
+        console.log(fname);
+        console.log(lname);
+        // Used to get rank
+        // can't use fname again. Same scope
+        // Use the aliasing to call it firstname
+        let {fname: firstName, stats: {rank}} = person;
+
+        // Enhanced Object literal syntax
+
+        // let fname = "Rafael";
+        // let lname = "Nadal";
+        //Create Objects
+        //let player = {fname: fname, lname:lname};
+        // let player = {fname, lname};
+
+
+        //Restricting PrintPlayer to not be able to change the
+        // original person object.
+        // fname, lname are local objs in the scope of the
+        // function. 
+        function PrintPlayer({fname, lname}) {
+            fname = "Rafa"; // This will not change the original obj player
+            console.log(fname + " " + lname);
+        }
+        PrintPlayer(person)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
