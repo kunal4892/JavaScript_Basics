@@ -19,11 +19,14 @@
             console.log(msg);
             throw new Error("Error")
         })
+        // Do not break the chain. Nullify the error with the second function
         .then(
             ()=> console.log("this would be printed"),
-            err => console.log(err),
+            err => console.log(err), // Comment and Uncomment to see effect
         )
-        .then(() => console.log("Even this gets printed !"));
+        .then(() => console.log("Even this gets printed !"))
+        .catch(err => console.log(err)); // Stop on error. Do not nullify the error.
+
     </script>
 </head>
 <body>
