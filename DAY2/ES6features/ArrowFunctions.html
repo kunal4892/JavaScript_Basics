@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Arrow functions
+        // Most widely used ES6 feature.
+        // Advantages?
+
+        // Function as an expression:
+
+        // let Add = function(x,y){
+        //     return x+y;
+        // };
+
+        // Arrow function iteration 1
+
+        // let Add = (x,y) => {
+        //     return x+y;
+        // };
+
+        // Improvement
+        
+        let Add = (x,y) => x+y;
+        console.log("Addition: ", Add(20, 40));
+       
+        //Advantages
+        // can be used wherever anonymous functions are required as
+        // input
+        let cars = ["BMW", "Nissan", "Merc"];
+        cars.forEach(function(car){
+            console.log(car);
+        })
+        // 1 parameter
+        cars.forEach(car =>console.log(car));
+
+        // How to write this with 0 params? - use ()
+        setTimeout(()=> console.log("printed after 2 seconds"), 2000);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
