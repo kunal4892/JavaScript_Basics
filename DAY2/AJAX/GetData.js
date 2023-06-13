@@ -1,4 +1,4 @@
-function GetData() {
+function GetData(callback) {
     console.log("Ajax logic here");
     // 1. Instantiate XMLHttpRequest.
     // 2. Open a connection.
@@ -10,9 +10,10 @@ function GetData() {
     //https://jsonplaceholder.typicode.com -  TEST
     xMLHttpRequest.open("GET", "https://jsonplaceholder.typicode.com/posts");
     xMLHttpRequest.onreadystatechange = function() {
-        if(xMLHttpRequest.readyState == 4 && xMLHttpRequest.status ==200){
-            console.log(xMLHttpRequest.responseText);
+        if(xMLHttpRequest.readyState == 4 && xMLHttpRequest.status ==200) {
+            // console.log(xMLHttpRequest.responseText);
+            callback(xMLHttpRequest.responseText);
         }
     };
-        xMLHttpRequest.send(); // places the async request - same as setTimeout
-    }
+    xMLHttpRequest.send(); // places the async request - same as setTimeout
+}

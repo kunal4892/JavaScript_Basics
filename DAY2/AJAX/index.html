@@ -7,10 +7,21 @@
     <title>Document</title>
     <script src="GetData.js"></script>    
     <script>
-        GetData();
+        // click and async request don't freeeze up the browser
+        // The browser takes care of running the async request and
+        // listening on the button click on separte threads.
+        function Eventhandler() {
+            console.log("U clicked");
+        }
+        //let postJson = GetData(); // We won't get the response here
+        // cant do sync calls to a func doing async operations.
+        GetData(function(postJson){
+            console.log(postJson);
+        });
+        console.log("Program Ended");
     </script>
 </head>
 <body>
-    
+    <button onclick="Eventhandler()">Button</button>
 </body>
 </html>
