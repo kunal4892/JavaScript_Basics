@@ -18,6 +18,28 @@
         PrintBook("Some author","Freakonomics", "Some publication" );
         //How to overload the first set of arg and not the last one.
         PrintBook(undefined, "Freakonomics");
+
+        // Advantages of arrow funcs
+        // Rather than using anony func use arrow func
+        console.log("Start another")
+        function Emp(){
+            this.salary = 200000;
+            // 1. Anonymous func
+            // 2. Context was resolved for Emp func at the runtime.
+            // 3.  Original context was lost.
+            // 4. Context - when the func was invoked.
+            // var _this = this;
+            // setTimeout(function() {
+            //     console.log(_this.salary);
+            // },2000);
+
+            // 1. Arrow funcs don't have their implicit "this"
+            // 2.  Context is binded at the time of creation of the arrow func
+            setTimeout(()=> console.log(this.salary),2000);
+        }
+        var emp = new Emp();
+        console.log("End another")
+
     </script>
 </head>
 <body>
