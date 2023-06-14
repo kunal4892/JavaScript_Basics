@@ -49,17 +49,28 @@ async function fetchCourses() {
     newCourseCardTitle.className = "card-title";
     newCourseCardTitle.innerHTML = course.title;
 
-    let newCourseCardText = document.createElement("p");
-    newCourseCardText.className = "card-text";
-    newCourseCardText.innerHTML = `Rating: ${course.rating},  Likes: ${course.likes},  Price: ${course.price}`;
+    let newCourseRating = document.createElement("p");
+    newCourseRating.className = "card-text";
+    newCourseRating.innerHTML = `Rating: ${course.rating}`;
 
-    let newCourseCardUrl = document.createElement("a");
-    newCourseCardUrl.href = "#";
-    newCourseCardUrl.class = "btn btn-primary";
+    let newCourseLikes = document.createElement("p");
+    newCourseLikes.className = "card-text";
+    newCourseLikes.innerHTML = `Likes: ${course.likes}`;
+
+    let newCoursePrice = document.createElement("p");
+    newCoursePrice.className = "card-text";
+    newCoursePrice.innerHTML = `Price: ₹. ${course.price} `;
+
+
+    let newCourseLikesBtn = document.createElement("button");
+    newCourseLikesBtn.innerText = course.likes;
+    newCourseLikesBtn.className = "btn btn-primary";
 
     newCourseCardDiv.appendChild(newCourseCardTitle);
-    newCourseCardDiv.appendChild(newCourseCardText);
-    newCourseCardDiv.appendChild(newCourseCardUrl);
+    newCourseCardDiv.appendChild(newCourseRating);
+    newCourseCardDiv.appendChild(newCourseLikes);
+    newCourseCardDiv.appendChild(newCoursePrice);
+    newCourseCardDiv.appendChild(newCourseLikesBtn);
 
     newCourseCard.appendChild(newCourseCardDiv);
     // let newCourse = document.createElement("li");
