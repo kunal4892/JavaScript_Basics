@@ -39,14 +39,6 @@
       "likes": 700,
       "rating": 4,
       "imageUrl": "https://miro.medium.com/max/2000/1*PCKC8Ufml-wvb9Vjj3aaWw.jpeg"
-    },
-    {
-      "id": "10",
-      "title": "Aurelia",
-      "price": "4000",
-      "likes": "400",
-      "rating": "4",
-      "imageUrl": "https://www.valuecoders.com/blog/wp-content/uploads/2016/12/aurleiajs1.jpg"
     }
   ]
 }

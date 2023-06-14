@@ -1,3 +1,5 @@
+import {DeleteCourse} from "./deletecourse.js";
+
 async function fetchCourses() {
     try {
       let courses = null;
@@ -80,8 +82,12 @@ async function fetchCourses() {
     });
 
     let newCourseDeleteBtn = document.createElement("button");
-    newCourseDeleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i> ${course.likes}`;
+    newCourseDeleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
     newCourseDeleteBtn.className = "btn btn-danger m-1";
+    newCourseDeleteBtn.addEventListener("click", ()=>{
+      let id = course.id;
+      DeleteCourse(id);
+    });
 
     newCourseCardDiv.appendChild(newCourseCardTitle);
     newCourseCardDiv.appendChild(newCourseRating);

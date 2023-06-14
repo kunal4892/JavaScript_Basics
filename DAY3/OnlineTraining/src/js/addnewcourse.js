@@ -1,10 +1,3 @@
-{/* <input id="id">Enter Id</input>
-<input id="title">Enter title</input>
-<input id="price">Enter price</input>
-<input id="likes">Enter likes</input>
-<input id="rating">Enter rating</input>
-<input id="imageUrl">Enter imageUrl</input> */}
-
 function AddNewCourse(){
     let Id = document.getElementById("Id").value;
     let title = document.getElementById("title").value;
