@@ -1,0 +1,11 @@
+#listofcourses {
+    padding: 10 px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space;
+}
+
+#Title-ui{
+    margin: auto;
+}

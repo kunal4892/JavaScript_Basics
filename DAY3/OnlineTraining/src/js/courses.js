@@ -41,7 +41,7 @@ async function fetchCourses() {
     let listofcourses = document.getElementById("listofcourses");
 
     let newCourseCard = document.createElement("div");
-    newCourseCard.className = "card";
+    newCourseCard.className = "card m-2";
     newCourseCard.style.width = "18rem";
 
     let newCourseCardImage = document.createElement("img");
