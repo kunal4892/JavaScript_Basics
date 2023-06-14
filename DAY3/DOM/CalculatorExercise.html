@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Add(){
+            let num1 = parseInt(document.getElementById("Number_1").value);
+            let num2 = parseInt(document.getElementById("Number_2").value);
+            let result = document.createElement("div");
+            result.innerHTML = num1+num2;
+            document.getElementById("output").innerHTML = num1 + num2;
+        }
+    </script>
+</head>
+<body>
+    <!-- Use int tags so that only integers are input from screen -->
+    <input id="Number_1"> Number 1</input>
+    <input id="Number_2"> Number 2</input>
+    <hr />
+    <div id="Result: "> Result </div>
+    <div id="output">Loading...</div>
+    <button id= "add_btn", onclick="Add()">Add</button>
+</body>
+</html>
