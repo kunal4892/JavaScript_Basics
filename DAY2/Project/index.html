@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="GetUsers.js"></script>
+    <script>
+        let res;
+        let nameList;
+        async function GetUserList(){
+            try{
+                res = await GetUsers("https://jsonplaceholder.typicode.com/users");
+                nameList = res.map((a)=> a.name)
+                console.log(nameList);
+                const node= document.createElement("li");
+                document.getElementById("userList-ui").appendChild(node).innerHTML = nameList;
+            } catch(e){
+                console.log("Error: " + e);
+            }
+        }
+        GetUserList();
+
+    </script>
+</head>
+<body>
+    <li class = "userList", id ="userList-ui">
+        <span class = userList_order></span>
+    </li>
+</body>
+</html>
