@@ -29,6 +29,14 @@ async function fetchCourses() {
   </div>*/
 
 
+  function generateStars(rating){
+    let str;
+    for (let i=0; i<rating; ++i){
+      str= str + `<i class="fa-solid fa-star" style="color:orange" ></i>`;
+    }
+    return str;
+  }
+
   function CreateNewCourseItem(course) {
     let listofcourses = document.getElementById("listofcourses");
 
@@ -51,7 +59,7 @@ async function fetchCourses() {
 
     let newCourseRating = document.createElement("p");
     newCourseRating.className = "card-text";
-    newCourseRating.innerHTML = `Rating: ${course.rating}`;
+    newCourseRating.innerHTML = `Rating: ${generateStars(course.rating)}`;
 
     let newCourseLikes = document.createElement("p");
     newCourseLikes.className = "card-text";
@@ -63,18 +71,30 @@ async function fetchCourses() {
 
 
     let newCourseLikesBtn = document.createElement("button");
-    newCourseLikesBtn.innerText = course.likes;
+    newCourseLikesBtn.innerHTML = `<i class="fa-regular fa-thumbs-up"></i> ${course.likes}`;
     newCourseLikesBtn.className = "btn btn-primary";
+    // Better than using onclick
+    newCourseLikesBtn.addEventListener("click", ()=>{
+      course.likes++;
+      newCourseLikesBtn.innerHTML = `<i class="fa-regular fa-thumbs-up"></i> ${course.likes}`;
+    });
+
+    let newCourseDeleteBtn = document.createElement("button");
+    newCourseDeleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i> ${course.likes}`;
+    newCourseDeleteBtn.className = "btn btn-danger m-1";
 
     newCourseCardDiv.appendChild(newCourseCardTitle);
     newCourseCardDiv.appendChild(newCourseRating);
     newCourseCardDiv.appendChild(newCourseLikes);
     newCourseCardDiv.appendChild(newCoursePrice);
     newCourseCardDiv.appendChild(newCourseLikesBtn);
-
+    newCourseCardDiv.appendChild(newCourseDeleteBtn);
     newCourseCard.appendChild(newCourseCardDiv);
     // let newCourse = document.createElement("li");
     // newCourse.innerText = course.title;
     listofcourses.appendChild(newCourseCard);
+ 
+    //TBD - Delete course when the button is pressed.
+    //listofcourses.removeChild()
   }
   window.addEventListener("DOMContentLoaded", fetchCourses);
