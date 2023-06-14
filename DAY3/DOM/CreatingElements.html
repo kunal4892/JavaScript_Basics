@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function AddElement(){
+            let newLi = document.createElement("li");
+            newLi.type = "text";
+            newLi.innerHTML = document.getElementById("InputField").value;
+            document.getElementById("beverages").appendChild(newLi);
+        }
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+    <input id="InputField"> Enter new beverage here</input>
+    <!-- <input type = "text"
+       id = "InputField" 
+       onkeydown = "if (event.keyCode == 13)
+                        document.getElementById('btn').click()"
+    > Enter new beverage here</Input> -->
+    <hr/>
+    <button id= "btn", onclick="AddElement()">Add New Beverage</button>
+    <ul id="beverages">
+        <li>Tea</li>
+        <li>Coffee</li>
+    </ul>
+</body>
+</html>
