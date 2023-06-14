@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Event fired after the parsing of html is completed by browser
+        // window.addEventListener("DOMContentLoaded", function() {
+        //     let tDiv = document.getElementById("targetDiv");
+        //     tDiv.innerHTML = "Dynamic";
+        // });
+        function ChangeInnerHtml(){
+            let tDiv = document.getElementById("targetDiv");
+            tDiv.innerHTML = "Dynamic";
+            tDiv.style.border = "2px solid blue";
+        }
+    </script>
+</head>
+<body>
+    <div id="targetDiv">Static</div>
+    <!-- // onclick is a predefined dom event -->
+    <!-- // ChangeInnerHtml is the event handler -->
+    <button onclick="ChangeInnerHtml()">Change Text!</button>
+</body>
+</html>
