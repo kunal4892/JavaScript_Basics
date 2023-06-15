@@ -87,6 +87,8 @@ async function fetchCourses() {
     newCourseDeleteBtn.addEventListener("click", ()=>{
       let id = course.id;
       DeleteCourse(id);
+      // No need to remove the child objects
+      listofcourses.removeChild(newCourseCard);
     });
 
     newCourseCardDiv.appendChild(newCourseCardTitle);

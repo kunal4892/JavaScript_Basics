@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../js/addnewcourse.js"></script>
+    <link
+    rel="stylesheet",
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.css"
+    />
 </head>
 <body class="container">
     <header>
-        <button onclick="AddNewCourse()"> Add Course</button>
+        <h1>New Course</h1>
     </header>
     <br>
-    <input id="Id" type="number", placeholder="Enter Id"></input>
+    <!-- <input id="Id" type="number", placeholder="Enter Id"></input>
     <br>
     <input id="title", placeholder="Enter title"></input>
     <br>
@@ -23,7 +27,15 @@
     <input id="rating" type="number", placeholder="Enter rating"></input>
     <br>
     <input id="imageUrl", placeholder="Enter imageUrl"></input>
-    <br>
+    <br> -->
+    <button onclick="AddNewCourse()"> Add Course</button>
+    <form>
+        <div class="row">
+            <!-- The medium(md) 2 coloums and 4 coloums-->
+            <div class="col-md-2", style="background-color: lightcyan;">Col1</div>
+            <div class="col-md-4", style="background-color: lightcoral;">Col2</div>
+        </div>
+    </form>
 </body>
 </body>
 </html>
