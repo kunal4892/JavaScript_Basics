@@ -20,6 +20,8 @@ function AddNewCourse(e){
         .then(res => res.json())
         .then(newcourse => {
           // alert(`${newcourse.title} added successfully !`);
+          let successMsg = document.querySelector(".success-msg");
+          successMsg.style.display = "block";
           window.location.href =
             "http://127.0.0.1:5500/DAY3/OnlineTraining/src/html/courses.html";
         });

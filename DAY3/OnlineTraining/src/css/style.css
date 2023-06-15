@@ -9,3 +9,8 @@
 #Title-ui{
     margin: auto;
 }
+
+.success-msg{
+    display: none;
+    position: absolute;
+}
