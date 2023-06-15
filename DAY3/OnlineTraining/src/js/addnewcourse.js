@@ -1,6 +1,7 @@
 function AddNewCourse(e){
     e.preventDefault();
     let body = {
+        // Html5 feature - querySelector
         id: parseInt(document.querySelector("#txtCourseId").value),
         title: document.querySelector("#txtCourseTitle").value,
         price: parseInt(document.querySelector("#txtCoursePrice").value),
