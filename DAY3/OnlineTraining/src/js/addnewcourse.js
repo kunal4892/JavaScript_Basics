@@ -1,18 +1,12 @@
-function AddNewCourse(){
-    let Id = document.getElementById("Id").value;
-    let title = document.getElementById("title").value;
-    let price = document.getElementById("price").value;
-    let likes = document.getElementById("likes").value;
-    let rating = document.getElementById("rating").value;
-    let imageUrl = document.getElementById("imageUrl").value;
-
+function AddNewCourse(e){
+    e.preventDefault();
     let body = {
-        id:Id,
-        title:title,
-        price:price,
-        likes:likes,
-        rating:rating,
-        imageUrl:imageUrl
+        id: parseInt(document.querySelector("#txtCourseId").value),
+        title: document.querySelector("#txtCourseTitle").value,
+        price: parseInt(document.querySelector("#txtCoursePrice").value),
+        likes: parseInt(document.querySelector("#txtCourseLikes").value),
+        rating: parseInt(document.querySelector("#txtCourseRating").value),
+        imageUrl: document.querySelector("#txtCourseImageUrl").value,
     }
 
     fetch("http://localhost:3000/courses", {
