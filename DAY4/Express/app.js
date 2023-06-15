@@ -1,13 +1,13 @@
-const express = require("express");
+// const express = require("express");
+import express from "express";
+import cors from "cors";
+import { courses } from "./data.js";
 const app = express()
 const port = 3500;
 
-app.get("/", (req,res)=> {
-    let products = [
-        {id: 1, title: "Macbook Pro", rating: 5},
-        {id: 1, title: "Macbook Air", rating:4},
-    ]
-    res.json(products);
+app.use(cors());
+app.get("/courses", (req,res)=> {
+    res.json(courses);
 });
 
 app.listen(port, ()=>{
